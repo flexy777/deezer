@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { VStack, Heading } from "@chakra-ui/react";
+import { VStack, Heading, Grid } from "@chakra-ui/react";
 import TrackCard from "./TrackCard";
 
 interface Track {
@@ -46,17 +46,23 @@ const Track = ({ searchTerm, onArtistClick }: TrackProps) => {
   return (
     <VStack alignItems="stretch" spacing="4">
       <Heading size="lg">Results</Heading>
-      {tracks.map((track) => (
-        <TrackCard
-          onClick={() => onArtistClick(track.artist.id)}
-          key={track.id}
-          artistName={track.artist.name}
-          trackName={track.title}
-          albumName={track.album.title}
-          duration={track.duration}
-          artistImage={track.artist.picture_medium}
-        />
-      ))}
+      <Grid
+        templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+        gap="4"
+        alignItems="start"
+      >
+        {tracks.map((track) => (
+          <TrackCard
+            onClick={() => onArtistClick(track.artist.id)}
+            key={track.id}
+            artistName={track.artist.name}
+            trackName={track.title}
+            albumName={track.album.title}
+            duration={track.duration}
+            artistImage={track.artist.picture_medium}
+          />
+        ))}
+      </Grid>
     </VStack>
   );
 };

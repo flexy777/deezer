@@ -139,11 +139,12 @@ const ArtistDetails = ({ artistId }: ArtistDetailsProps) => {
                 objectFit="cover"
                 borderRadius="md"
                 mb="4"
+                margin="auto"
               />
-              <Text fontSize="lg" fontWeight="bold">
+              <Text fontSize="lg" fontWeight="bold" textAlign="center">
                 {album.title}
               </Text>
-              <Text fontSize="sm" color="gray.500" mb="4">
+              <Text fontSize="sm" color="gray.500" mb="4" textAlign="center">
                 Year: {album.release_date}
               </Text>
             </Box>

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import { Box, Flex, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Track from "./Components/Track";
 

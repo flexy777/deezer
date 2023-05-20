@@ -23,7 +23,12 @@ const SearchInput = ({ onSearch }: Props) => {
           placeholder="Search tracks..."
           variant="filled"
         />
-        <Button onClick={handleSearch} colorScheme="teal">
+        <Button
+          ms="2"
+          borderRadius={10}
+          onClick={handleSearch}
+          colorScheme="teal"
+        >
           Search
         </Button>
       </InputGroup>

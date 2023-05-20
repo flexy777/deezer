@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import {
   VStack,
   Text,
@@ -45,7 +46,7 @@ const Charts = () => {
         setTracks(data.data);
         setIsLoading(false);
       } catch (error) {
-        console.error("Error fetching tracks:", error);
+        toast.error("Error fetching tracks:" + error);
         setIsLoading(false);
       }
     };

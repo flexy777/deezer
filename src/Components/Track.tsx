@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { VStack, Heading, Grid } from "@chakra-ui/react";
 import TrackCard from "./TrackCard";
+import { toast } from "react-toastify";
 
 interface Track {
   id: number;
@@ -32,7 +33,7 @@ const Track = ({ searchTerm, onArtistClick }: TrackProps) => {
         const data = await response.json();
         setTracks(data.data);
       } catch (error) {
-        console.error("Error searching tracks:", error);
+        toast.error("Error searching tracks:" + error);
       }
     };
 
